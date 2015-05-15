@@ -52,15 +52,10 @@
             {{! The 'inner' divs provide a nice wrapper for content to help with fluidity and responsiveness }}
             <div id="inner-content" class="wrap clearfix">
 
-                {{! The main section uses eight columns in the grid framework }}
-                <main id="main" class="eightcol first clearfix" role="main">
+                {{! The main section uses twelve columns in the grid framework }}
+                <main id="main" class="twelvecol first clearfix" role="main">
                     {{{body}}}
                 </main> <!-- end #main -->
-
-                {{! The sidebar fills in the remaining four columns }}
-                <aside id="sidebar-main" class="sidebar fourcol clearfix" role="complementary">
-                    {{> sidebar}}
-                </aside>
 
             </div> <!-- end #inner-content -->
 

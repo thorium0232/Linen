@@ -18,7 +18,9 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: #565656;
+	background-color: #f0efe9;
 }
+
 
 /*********************
 LAYOUT & GRID STYLES
@@ -108,7 +110,12 @@ HEADER STYLES
 *********************/
 
 .header {
-    margin-top: 24px;
+    margin-top: 0px;
+		background: #222 no-repeat center center;
+		background-size: cover;
+		height: 200px;
+		overflow: hidden
+
 }
 
 #logo {
@@ -118,7 +125,30 @@ HEADER STYLES
 }
 
 #site-title {
+		position: relative;
     font-size: 1.8em;
+		text-transform: uppercase;
+		max-width: 710px;
+		margin: 0 auto;
+		top: 50%;
+  	transform: translateY(-50%);
+}
+
+#title-header{
+		height: 200px;
+
+		a, a:visited {
+			color: $black;
+
+			/* on hover */
+			&:hover, &:focus {
+				color: $link-hover;
+			}
+		}
+}
+
+.caps{
+	text-transform: uppercase;
 }
 
 /*********************
@@ -348,4 +378,3 @@ FOOTER STYLES
 }
 
 .copyright {}
-
