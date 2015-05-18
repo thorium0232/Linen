@@ -1,11 +1,8 @@
 <header class="header {{#if @blog.cover}}" role="banner" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
 
-    {{#if @blog.logo}}
-        <!-- Logo -->
-        <div id="logo" class="h1">
-            <a id="logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Logo"></a>
-        </div>
-    {{/if}}
+  <div class="wrap twelvecol hide-on-mobile">
+    {{> navigation}}
+  </div>
 
     <!-- Align text vertially -->
     <div id="title-header"class="wrap text-center">
@@ -18,9 +15,3 @@
     </div>
 
 </header> <!-- end header -->
-<div id="inner-header" class="wrap clearfix">
-
-    <!-- Static Menu (Dynamic menu not yet available in Ghost 0.3) -->
-    {{> navigation}}
-
-</div> <!-- end #inner-header -->

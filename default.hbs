@@ -53,9 +53,15 @@
             <div id="inner-content" class="wrap clearfix">
 
                 {{! The main section uses twelve columns in the grid framework }}
-                <main id="main" class="twelvecol first clearfix" role="main">
+                <main id="main" class="eightcol first clearfix" role="main">
                     {{{body}}}
                 </main> <!-- end #main -->
+
+                {{! The sidebar fills in the remaining four columns }}
+                <aside id="sidebar-main" class="sidebar fourcol clearfix" role="complementary">
+                    {{> sidebar}}
+                </aside>
+
 
             </div> <!-- end #inner-content -->
 
@@ -63,7 +69,7 @@
 
         <footer class="footer" role="contentinfo">
             <div id="inner-footer" class="wrap clearfix">
-                <p class="source-org copyright">© 2013 <a href="http://themespectre.com">Theme Spectre, LLC.</a></p>
+                <p class="source-org copyright text-center">© 2013 <a href="{{@blog.url}}">{{@blog.title}}</a></p>
             </div> <!-- end #inner-footer -->
         </footer> <!-- end footer -->
 

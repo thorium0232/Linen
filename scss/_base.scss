@@ -17,8 +17,11 @@ body {
 	font-family: $serif;
 	font-size: 100%;
 	line-height: 1.5;
-	color: #565656;
+	color: $black;
 	background-color: #f0efe9;
+	-webkit-font-feature-settings: 'kern' 1;
+	-moz-font-feature-settings: 'kern' 1;
+	-o-font-feature-settings: 'kern' 1;
 }
 
 
@@ -67,6 +70,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	font-family: $sans-serif;
 	text-rendering: optimizelegibility;
 	font-weight: 500;
+	text-transform: uppercase;
+	-webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+	-moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+	-o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
 	/*
 	if you're going to use webfonts, be sure to check your weights
 	http://css-tricks.com/watch-your-font-weight/
@@ -111,7 +118,7 @@ HEADER STYLES
 
 .header {
     margin-top: 0px;
-		background: #222 no-repeat center center;
+		background: #FF6A49 no-repeat center center;
 		background-size: cover;
 		height: 200px;
 		overflow: hidden
@@ -151,6 +158,11 @@ HEADER STYLES
 	text-transform: uppercase;
 }
 
+.hide-on-mobile{
+	visibility: hidden;
+	height:0px;
+}
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -158,8 +170,8 @@ NAVIGATION STYLES
 /* The {{nav}} helper outputs a site-navigation div */
 
 #site-navigation {
-	border: 1px solid #ccc;
 	border-bottom: 0;
+	width: 100%;
 
     ul {
       margin : 0;
@@ -171,8 +183,7 @@ NAVIGATION STYLES
 			display: block;
 			text-decoration: none;
 			padding: 10px 10px;
-			background-color: #eee;
-			border-bottom: 1px solid #ccc;
+
 
 			/*
 			remember this is for mobile ONLY, so there's no need
@@ -217,23 +228,44 @@ POSTS & CONTENT STYLES
     color: #999;
     time {}
 }
+/* Article header content */
+.article-header{
+
+		p {
+			font-size: 1em;
+			margin: 0.1em 0;
+		}
+
+}
 
 /* Article entry content */
 .entry-content {
+		p, ul, ol, dl{
+			-webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+			-moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+			-o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
+		}
 
-    p {}
+    p {
+			line-height: 1.4em;
+		}
 
-    ul, ol, table, dl {}
+    ul, ol, table, dl {
+
+		}
 
     ul, ol {
+			padding-left: 3rem;
         li {}
     }
 
     ul {
+			list-style-type: disc;
         li {}
     }
 
     ol {
+			list-style-type: decimal;
         li {}
     }
 
@@ -268,6 +300,7 @@ POSTS & CONTENT STYLES
     }
 
 } /* end .entry-content */
+
 
 .img-caption {
     max-width: 100%;
@@ -343,11 +376,21 @@ PAGINATION (Thanks to the Ghost team for this)
 SIDEBARS & ASIDES
 *********************/
 
-.sidebar {}
+.sidebar {
+	border-left: $black 0.4em solid;
+	background-color: #0FB277;
+	color: $black;
+}
 
 .widgettitle {}
 
 .widget {
+
+
+
+		&:first-of-type{
+			margin: 0.2em;
+		}
 
     img {
         max-width: 100%;
